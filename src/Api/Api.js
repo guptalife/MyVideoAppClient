@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '../store/store';
 
-const BASE_URL = "http://localhost:5000/api" 
+const BASE_URL = "https://git.heroku.com/videos-call-server-app.git/api" 
 
 const api = axios.create({
     baseURL:BASE_URL

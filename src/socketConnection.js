@@ -14,7 +14,7 @@ export const joinCall = (setJoined, roomId) => {
 }
 
 export const getSocketConnections = () => {
-      socket = io('http://localhost:5000');
+      socket = io('https://git.heroku.com/videos-call-server-app.git');
 
       socket.on('call-request', (from) => {
             console.log('request Came client', from);
