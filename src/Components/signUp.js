@@ -45,7 +45,11 @@ function SignUp({ open, setOpen }) {
                 </DialogTitle>
                 <Box
                     height={500}
-                    width={400}
+                     width={{
+                        sm:'350',
+                        md:'400'
+                     }
+                    }
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',

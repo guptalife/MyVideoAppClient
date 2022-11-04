@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Navbar from './Components/Navbar';
 import { Box, Stack } from '@mui/material';
 import {v4 as uuid} from 'uuid'
@@ -26,11 +26,11 @@ function App() {
         align='center'
         variant='h2'
         fontWeight='800'
-        fontSize={100}
         marginTop={`${window.innerHeight / 2 - 300}px`}
         color='#00008B'
         sx={{
-           fontWeight:'800'
+           fontWeight:'800',
+           fontSize:{sm:'40px',md:'100px'}
         }}
       >
         The Next

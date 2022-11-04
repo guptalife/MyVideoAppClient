@@ -39,7 +39,10 @@ const SignIn = ({ open, setOpen }) => {
                 </DialogTitle>
                 <Box
                     height={400}
-                    width={400}
+                    width={{
+                        sm:'350',
+                        md:'400'
+                     }}
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
