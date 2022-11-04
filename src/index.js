@@ -20,12 +20,9 @@ getSocketConnections();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/"
-         errorElement= {<Error/>}
-        >
+        <Route>
             <Route path='/' element={<App />} />
-            <Route path='/room/:roomId' element={<Room />} >
-        </Route>
+            <Route path='/room/:roomId' element={<Room />} />
         </Route>
     )
 )
