@@ -1,15 +1,12 @@
-import React, { useRef, useEffect } from 'react'
-import { Box } from '@mui/system';
+import React, { useRef} from 'react'
 function Video(props) {
-  const videoRef = React.useRef();
+  const videoRef = useRef();
   React.useEffect(() => {
     const video = videoRef.current;
-    console.log(props.stream)
     if (props.stream)
       video.srcObject = props.stream;
   }, [props.stream]);
   return (
-    
       <video
        style={{
         width : props.width?props.width:'100%',
@@ -18,6 +15,7 @@ function Video(props) {
          border:'1px solid red',
          objectFit:'cover'
        }}
+       muted={props.muted}
        ref={videoRef} autoPlay />
   )
 }

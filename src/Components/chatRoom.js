@@ -22,7 +22,7 @@ function Room({setJoin}) {
      >
         <Grid container spacing={0}>
         <Grid height='50vh'
-          xs={6}><Video height = 'inherit'  stream= {localStream} />
+          xs={6}><Video height = 'inherit'  stream= {localStream} muted ={true} />
         </Grid>
            {
             remoteStreams.map((remoteStream,index)=>{

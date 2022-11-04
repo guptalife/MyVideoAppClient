@@ -5,13 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import Error from './Components/Error';
-import { createTheme } from '@mui/material';
 import {
     createBrowserRouter,
     RouterProvider,
     Route,
-    Link,
     createRoutesFromElements
 } from "react-router-dom";
 import Room from './Components/Room';

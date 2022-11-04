@@ -24,8 +24,6 @@ export const login= async (loginCredentials)=>{
      return res.data;
     }
     catch(err){
-         console.log(err.response.data);
-         console.log(err);
     }
 }
 
@@ -37,6 +35,5 @@ export const register= async (registerCredentials)=>{
         return res.data;
     }
     catch(err){
-       console.log(err);
     }
 }

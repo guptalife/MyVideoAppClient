@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Stack, Box } from '@mui/system'
-import store from '../store/store'
 import {
     Dialog, DialogTitle,
-    useMediaQuery, TextField, Button,
+     TextField, Button,
     Container
     , Typography
 }
@@ -17,12 +16,11 @@ const SignIn = ({ open, setOpen }) => {
     const [password, setPassword] = useState(null);
     const dispatch = useDispatch();
     const handleSignIn = async () => {
-        console.log(email + password);
         const user = await login({ email, password });
-        console.log(user);
+        if(user&&user!==undefined){
         localStorage.setItem('user', JSON.stringify(user))
         dispatch(setUser(user));
-        console.log(store.getState().user.user);
+        }
     }
     return (
         <Box

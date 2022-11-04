@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { Stack, Box } from '@mui/system'
 import { register} from '../Api/Api';
-import { useNavigate } from 'react-router-dom';
 import { setUser } from '../store/userSlice';
 import { useDispatch } from 'react-redux';
 import PasswordInput from './PasswordInput';
 import {
     Dialog, DialogTitle,
-    useMediaQuery, TextField, Button,
+     TextField, Button,
     Container
     , Typography
 }
@@ -17,13 +16,13 @@ function SignUp({ open, setOpen }) {
     const [password,setPassword]=useState('');
     const [username,setUsername] = useState('');
     const dispatch=useDispatch();
-    const navigate = useNavigate();
     const handleSignUp= async()=>{
-         console.log('sign up' + email + ' '+ password)
           try{
              const user = await register({email,password,username});
+             if(user&&user!==undefined){
              localStorage.setItem('user',JSON.stringify(user));
-             setUser(user);
+             dispatch(setUser(user));
+             }
           }
           catch(err){
              console.log(err);
