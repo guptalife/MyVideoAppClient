@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '../store/store';
 
-const BASE_URL = "https://myvideoappserver-production.up.railway.app/api" 
+const BASE_URL = "https://videoappserver-3wzk.onrender.com/api" 
 
 const api = axios.create({
     baseURL:BASE_URL
