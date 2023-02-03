@@ -14,7 +14,7 @@ export const joinCall = (setJoined, roomId) => {
 }
 
 export const getSocketConnections = () => {
-      socket = io('https://myvideoappserver-production.up.railway.app/');
+      socket = io('https://videoappserver-3wzk.onrender.com/');
       socket.on('call-request', (from) => {
             console.log('request Came client', from);
             peers[from] = new Peer({
