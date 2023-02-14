@@ -6,6 +6,22 @@ const { dispatch } = store;
 const peers = {
 
 }
+const peerConfiguration = () => {
+      const turnIceServers = null;
+  
+      if (turnIceServers) {
+          // TODO use TURN server credentials
+      } else {
+         // console.warn("Using only STUN server");
+          return {
+              iceServers: [
+                  {
+                      urls: "stun:stun.l.google.com:19302",
+                  },
+              ],
+          };
+      }
+  };
 let socket;
 
 export const joinCall = (setJoined, roomId) => {
@@ -20,7 +36,8 @@ export const getSocketConnections = () => {
             peers[from] = new Peer({
                   trickle: false,
                   stream: store.getState().stream.localStream,
-                  initiator: true
+                  initiator: true,
+                  config:peerConfiguration()
             })
             peers[from].on('signal', (data) => {
                   console.log('signal client')
@@ -43,7 +60,8 @@ export const getSocketConnections = () => {
             peers[from] = new Peer({
                   trickle: false,
                   stream: store.getState().stream.localStream,
-                  initiator: false
+                  initiator: false,
+                  config:peerConfiguration()
             });
             peers[from].on('signal', (data) => {
                   socket.emit('recieve-data', { from: socket.id, to: from, data });
