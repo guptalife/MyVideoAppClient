@@ -13,6 +13,10 @@ import {
 } from "react-router-dom";
 import Room from './Components/Room';
 import { getSocketConnections } from './socketConnection';
+import * as process from 'process';
+window.global = window;
+window.process = process;
+window.Buffer = [];
 getSocketConnections();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter(
